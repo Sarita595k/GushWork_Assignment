@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Gushwork Assignment</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbarContainer">
+                <div class="logoContainer">
+                    <img class="logoImage" src="./assets/logo.png" alt="logo image">
+                </div>
+
+                <div class="navbarItems">
+                    <ul class="navItemsList">
+                        <li><a href="#">About Us</a></li>
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">
+                                Products <span class="arrow">▼</span>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="#ai-web">AI Web Generator</a>
+                                <a href="#lead-gen">Lead Generation</a>
+                                <a href="#seo">SEO Strategy</a>
+                            </div>
+                        </li>
+
+                        <li><button class="contactBtn">Contact Us</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="breadcrumbs">
+            <p>Products</p>
+        </div>
+
+        <!-- main hero section starts here  -->
+        <section id="heroSection">
+            <div class="hero-container">
+                <div class="product-gallery">
+                    <div class="gallery-container">
+                        <div class="main-image-wrapper" id="zoom-container">
+                            <img src="./assets/carousel/slider1.jpg" alt="HDPE Pipe 1" class="main-image"
+                                id="main-product-image">
+
+                            <div class="zoom-window" id="zoom-result"></div>
+
+                            <button class="nav-arrow prev" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="nav-arrow next" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+                        <div class="thumbnail-grid">
+                            <div class="thumb active" data-full="./assets/carousel/slider2.jpg"><img
+                                    src="./assets/carousel/slider2.jpg" alt="Thumb 1"></div>
+                            <div class="thumb" data-full="./assets/carousel/slider3.jpg"><img
+                                    src="./assets/carousel/slider3.jpg" alt="Thumb 2">
+                            </div>
+                            <div class="thumb" data-full="./assets/carousel/slider1.jpg"><img
+                                    src="./assets/carousel/slider1.jpg" alt="Thumb 3"></div>
+                            <div class="thumb" data-full="./assets/carousel/slider2.jpg"><img
+                                    src="./assets/carousel/slider2.jpg" alt="Thumb 4"></div>
+                            <div class="thumb" data-full="./assets/carousel/slider3.jpg"><img
+                                    src="./assets/carousel/slider3.jpg" alt=" Thumb 5">
+                            </div>
+                            <div class="thumb" data-full="./assets/carousel/slider1.jpg"><img
+                                    src="./assets/carousel/slider1.jpg" alt="Thumb 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heroContent">
+                    <div class="heroContent">
+                        <div class="hallmark-details">
+                            <div class="hallmark-group">
+                                <img src="./assets/Hallmark/bis.png" alt="BIS" class="hallmark">
+                                <p class="hallmark-content">BIS Certified</p>
+                            </div>
+                            <div class="hallmark-group">
+                                <img src="./assets/Hallmark/isi.png" alt="ISO" class="hallmark">
+                                <p class="hallmark-content">ISO Certified</p>
+                            </div>
+                            <div class="hallmark-group">
+                                <img src="./assets/Hallmark/ce.png" alt="CE" class="hallmark">
+                                <p class="hallmark-content">CE Certified</p>
+                            </div>
+                        </div>
+
+                        <div class="product-heading">
+                            <h1 class="main-title">Premium HDPE Pipes & Coils for Modern Infrastructure</h1>
+
+                            <ul class="feature-list">
+                                <li>Leak-proof fusion joints</li>
+                                <li>Chemical resistance</li>
+                                <li>50+ year service life</li>
+                                <li>Flexible installation</li>
+                                <li>Flexible installation</li>
+                            </ul>
+
+                            <div class="price-card">
+                                <p class="price-label">Price Range</p>
+                                <h2 class="price-value">₹4,80,000 - 7,90,000</h2>
+
+                                <div class="shipping-row">
+                                    <span class="badge shipping">Shipping: 6-12 days</span>
+                                    <span class="badge returns">Returns: If returned within 7 days</span>
+                                </div>
+
+                                <p class="cert-footer">Certifications: ISO Certified, BIS Certified</p>
+                            </div>
+
+                            <div class="button-group">
+                                <button class="btn-primary">Get Custom Quote</button>
+                                <button class="btn-secondary">View Technical Specs <span>↗</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="euroflex-section">
+            <p>trusted by hundreds of companies globally</p>
+            <div class="euro-image">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+                <img src="./assets/euroflex/euroflex.png" alt="">
+            </div>
+
+        </section>
+
+        <section id="technical-specification-section">
+            <div class="specs-container">
+
+                <div class="specs-header">
+                    <h3>Technical Specification at a Glance</h3>
+                    <p>Comprehensive performance data demonstrating our commitment to quality and engineering
+                        excellence.</p>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Specification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="param">Pipe Diameter Range</td>
+                                <td>20mm to 1600mm (3/4” to 63”)</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Pressure Ratings</td>
+                                <td>PN 2.5, PN 4, PN 6, PN 8, PN 10, PN 12.5, PN 16</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Standard Dimension Ratio</td>
+                                <td>SDR 33, SDR 26, SDR 21, SDR 17, SDR 13.6, SDR 11</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Operating Temperature</td>
+                                <td>-40°C to +80°C (-40°F to +176°F)</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Service Life</td>
+                                <td>50+ Years (at 20°C, PN 10)</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Material Density</td>
+                                <td>0.95 - 0.96 g/cm³</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Certifications Standards</td>
+                                <td>IS 5984, ISO 4427, ASTM D3035</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Joint Type</td>
+                                <td>Butt Fusion, Electrofusion, Mechanical</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Coil Length</td>
+                                <td>Up to 500m (for smaller diameters)</td>
+                            </tr>
+                            <tr>
+                                <td class="param">Country of Origin</td>
+                                <td><img src="./assets/logo/india.png" class="india-logo" alt=""> India</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="specs-footer">
+                    <button class="download-btn">Download Full Technical Datasheet <span>↓</span></button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="built-to-last-section">
+            <div class="build-container">
+                <div class="build-header">
+                    <h2>Built to Last. Engineered to Perform.</h2>
+                    <p>From bulk bags to technical threads, Meera delivers precision solutions for every stage of your
+                        packaging process.</p>
+                </div>
+
+                <div class="build-cards-grid">
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>Superior Chemical Resistance</h4>
+                        <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they
+                            won't corrode, rust or scale, ensuring pure water quality.</p>
+                    </div>
+
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <h4>High Impact Strength</h4>
+                        <p>Designed to withstand significant physical impact and environmental stress, maintaining
+                            integrity in the most demanding conditions.</p>
+                    </div>
+
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Extended Service Life</h4>
+                        <p>With a service life of 50+ years, our pipes provide long-term reliability and significantly
+                            lower maintenance costs over time.</p>
+                    </div>
+
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4>Extreme Flexibility</h4>
+                        <p>The inherent flexibility of HDPE allows for easier installation in diverse terrains, reducing
+                            the need for costly fittings and joints.</p>
+                    </div>
+
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Eco-Friendly Choice</h4>
+                        <p>100% recyclable material with a low carbon footprint during manufacturing and transport
+                            compared to traditional piping materials.</p>
+                    </div>
+
+                    <div class="build-card">
+                        <div class="icon-box">
+                            <i class="fas fa-tint-slash"></i>
+                        </div>
+                        <h4>Zero Leakage Rate</h4>
+                        <p>Heat-fused joints create a homogenous, monolithic system that is stronger than the pipe
+                            itself, eliminating potential leak points.</p>
+                    </div>
+                </div>
+
+                <div class="build-action">
+                    <button class="request-btn">Request a Quote</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

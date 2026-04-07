@@ -1,0 +1,969 @@
+/* --- 1. Global Reset & Variables --- */
+:root {
+    --brand-blue: #2B3990;
+    --brand-dark: #0f172a;
+    --text-gray: #475569;
+    --bg-white: #ffffff;
+    --nav-height: 77px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #E1E3E8;
+    color: var(--brand-dark);
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Navbar Layout --- */
+.navbar {
+    width: 100%;
+    height: var(--nav-height);
+    background: var(--bg-white);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbarContainer {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- 3. Logo Section --- */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    width: 109px;
+}
+
+.logoImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. Navigation Items --- */
+.navbarItems {
+    display: flex;
+    align-items: center;
+}
+
+.navItemsList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.navItemsList li a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+
+.navItemsList li a:hover {
+    color: var(--brand-blue);
+}
+
+/* --- 5. Dropdown Logic --- */
+.dropdown {
+    position: relative;
+    padding: 10px 0;
+    /* Extra hover area */
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.arrow {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-white);
+    min-width: 220px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-gray) !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f5f9;
+    color: var(--brand-blue) !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* --- 6. Contact Button --- */
+.contactBtn {
+    background-color: var(--brand-blue);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+}
+
+.contactBtn:hover {
+    background-color: #0b7a6f;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.3);
+}
+
+.contactBtn:active {
+    transform: translateY(0);
+}
+
+/* hero section  */
+#heroSection {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* --- Breadcrumbs Centering --- */
+.breadcrumbs {
+    width: 100%;
+    max-width: 1240px;
+    margin: 20px auto;
+    padding-left: 24px;
+}
+
+.hero-container {
+    width: 1240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-gallery {
+    padding: 60px;
+    width: 570px;
+    height: 670px;
+    margin: 0 auto;
+}
+
+.gallery-container {
+    width: 570px;
+    height: 670px;
+}
+
+/* --- Main Image Area --- */
+.main-image-wrapper {
+    width: 570px;
+    height: 570px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: crosshair;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.main-image {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Navigation Arrows*/
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    color: var(--brand-blue);
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    background: #f8fafc;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* --- THE ZOOM WINDOW (Hidden by default) --- */
+.zoom-window {
+    position: absolute;
+    inset: 0;
+    /* Cover the whole main image */
+    background-color: #fff;
+    /* White bg behind the zoomed content */
+    background-repeat: no-repeat;
+    background-size: 200%;
+    /* How much to zoom (2x) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 20;
+    /* Sit above arrows */
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+/* Activate zoom state (triggered by JS) */
+.main-image-wrapper.zoomed .zoom-window {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide arrows when zooming (prevents visual clutter) */
+.main-image-wrapper.zoomed .nav-arrow {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- Thumbnail Grid (Below) --- */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.thumb {
+    width: 80px;
+    height: 80px;
+    background: #F3F4F6;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    /* Dim inactive thumbnails */
+    transition: opacity 0.3s ease;
+}
+
+.thumb:hover img {
+    opacity: 1;
+}
+
+/* Active Thumbnail Styling */
+.thumb.active {
+    border-color: var(--brand-blue);
+    /* Mangalam blue border */
+}
+
+.thumb.active img {
+    opacity: 1;
+}
+
+
+/* --- Hero Section Core --- */
+#heroSection {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    /* Space between gallery and content */
+}
+
+#heroSection {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 60px 0px;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* --- Product Gallery Fix --- */
+.product-gallery {
+    padding: 0;
+    width: 570px;
+    margin: 0;
+}
+
+.gallery-container {
+    width: 100%;
+    height: auto;
+}
+
+/* --- Hero Content Fix --- */
+.heroContent {
+    width: 570px;
+    flex: none;
+    padding-top: 10px;
+}
+
+/* --- Breadcrumbs Alignment --- */
+.breadcrumbs {
+    width: 100%;
+    max-width: 1240px;
+    margin: 20px auto 0;
+    padding: 0;
+    /* Align with the 1240px grid start */
+}
+
+.main-image-wrapper {
+    width: 570px;
+    height: 570px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f1f5f9;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.thumb {
+    width: 100%;
+    /* Spans grid cell */
+    aspect-ratio: 1/1;
+    background: #f1f5f9;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.thumb.active {
+    border-color: var(--brand-blue);
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.thumb:hover img,
+.thumb.active img {
+    opacity: 1;
+}
+
+/* --- Hero Content Column --- */
+
+.hallmark-details {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.hallmark-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: #eff6ff;
+    /* Soft Blue */
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+}
+
+.hallmark {
+    width: 24px;
+    height: auto;
+}
+
+.hallmark-content {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    letter-spacing: 0.5px;
+}
+
+.main-title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f172a;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.feature-list {
+    list-style-type: none;
+    margin-bottom: 32px;
+}
+
+.feature-list li {
+    font-size: 16px;
+    color: #475569;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.feature-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    color: #2B3990;
+    width: 6px;
+    height: 6px;
+    margin-top: -14px;
+    border-radius: 50%;
+}
+
+/* Pricing Card Shadow - EXACT SPEC */
+.price-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.08);
+    /* S3 Shadow from Figma */
+}
+
+.price-label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.price-value {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.shipping-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.badge.shipping {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge.returns {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.cert-footer {
+    width: 297px;
+    font-size: 13px;
+    color: #94a3b8;
+    border-top: 1px solid #f1f5f9;
+    padding: 10px;
+    background-color: #F3F4F6;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary {
+    background: var(--brand-blue);
+    color: white;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 18px 32px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* --- Trusted By Section Styling --- */
+#euroflex-section {
+    width: 100%;
+    height: 48px;
+    max-width: 1240px;
+    margin: 80px auto 40px;
+    margin-bottom: 10%;
+    text-align: center;
+    padding: 0 24px;
+}
+
+#euroflex-section p {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.euro-image {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: nowrap;
+    /* margin-top: 40px; */
+    overflow: hidden;
+}
+
+.euro-image img {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.euro-image img:hover {
+    filter: grayscale(100%);
+    opacity: 1;
+}
+
+#technical-specification-section {
+    width: 100%;
+    background-color: #0F172A;
+    /* Dark blue fills everything */
+    padding: 80px 0;
+    /* Top and bottom padding */
+    color: white;
+    margin: 80px 0;
+    /* Space between this and other sections */
+}
+
+/* 2. The Internal Container: Centers the table and text at 1240px */
+#technical-specification-section .specs-container {
+    max-width: 1240px;
+    /* Matches your Navbar/Hero width */
+    margin: 0 auto;
+    /* Centers the content */
+    padding: 0 24px;
+    /* Safety padding for smaller screens */
+}
+
+/* 3. Adjusting the Header */
+.specs-header {
+    text-align: left;
+    margin-bottom: 45px;
+}
+
+.specs-header h3 {
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.specs-header p {
+    color: #94A3B8;
+    font-size: 18px;
+    max-width: 700px;
+}
+
+/* --- Table Container (Internal Box) --- */
+.table-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 24px 32px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brand-blue);
+    /* Or Gushwork Teal */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+td {
+    padding: 20px 32px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #E2E8F0;
+}
+
+/* Zebra Striping for Readability */
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.param {
+    font-weight: 600;
+    color: white;
+    width: 35%;
+    /* Fixed width for the parameter column */
+    text-transform: capitalize;
+}
+
+/* --- Download Button --- */
+.specs-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.india-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.download-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: white;
+    color: #0F172A;
+    border-color: white;
+}
+
+/* --- Built to Last Section --- */
+#built-to-last-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.build-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.build-header {
+    text-align: left;
+    margin-bottom: 64px;
+}
+
+.build-header h2 {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.build-header p {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 720px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* --- The 3-Column Grid --- */
+.build-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+/* --- The Card Design --- */
+.build-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.build-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--brand-blue);
+    /* Matching the Figma S3 Shadow */
+    box-shadow: 0px 20px 40px -12px rgba(15, 23, 42, 0.12);
+}
+
+.icon-box {
+    width: 56px;
+    height: 56px;
+    background-color: #f0f4ff;
+    /* Light brand tint */
+    color: var(--brand-blue);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 24px;
+}
+
+.build-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 14px;
+    text-transform: capitalize;
+}
+
+.build-card p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- CTA Button --- */
+/* --- CTA Button Container --- */
+.build-action {
+    width: 100%;
+    /* Take full width of the container */
+    display: flex;
+    /* Use flexbox to align the button */
+    justify-content: center;
+    /* THE FIX: Centers the button horizontally */
+    margin-top: 20px;
+    /* Optional: space between grid and button */
+}
+
+/* Ensure the button itself remains a pill shape */
+.build-action .request-btn {
+    background-color: var(--brand-blue);
+    color: white;
+    padding: 18px 44px;
+    border: none;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(43, 57, 144, 0.2);
+}
+
+.build-action .request-btn:hover {
+    background-color: #1e2a78;
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(43, 57, 144, 0.3);
+}
+
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* 1. Below 1600px (Desktop L) */
+@media screen and (max-width: 1600px) {
+    .navbarContainer {
+        max-width: 1400px;
+        /* Slightly wider container for large screens */
+        padding: 0 40px;
+    }
+}
+
+/* 2. Below 1440px (Standard Desktop - Figma Size) */
+@media screen and (max-width: 1440px) {
+    .navbarContainer {
+        max-width: 1240px;
+        /* Matches your original design spec */
+    }
+
+    .navItemsList {
+        gap: 2.5rem;
+        /* Shrinking the space between links */
+    }
+}
+
+/* 3. Below 1200px (Laptop/Tablet Landscape) */
+@media screen and (max-width: 1200px) {
+    .navbarContainer {
+        max-width: 1000px;
+    }
+
+    .navItemsList {
+        gap: 1.5rem;
+    }
+
+    .navItemsList li a {
+        font-size: 0.9rem;
+        /* Slightly smaller text */
+    }
+}
+
+/* 4. Below 1080px (Small Laptop) */
+@media screen and (max-width: 1080px) {
+    .navbarContainer {
+        max-width: 900px;
+    }
+
+    .logoContainer {
+        width: 100px;
+        /* Shrink logo slightly to save space */
+    }
+}
+
+/* 5. Below 800px (Tablet Portrait - Switch to Mobile Menu) */
+@media screen and (max-width: 800px) {
+
+    /* At this point, horizontal links usually break. 
+       You would typically hide the links and show a Hamburger icon here. */
+    .navItemsList {
+        gap: 1rem;
+    }
+
+    .contactBtn {
+        padding: 10px 18px;
+        /* Smaller button */
+        font-size: 0.8rem;
+    }
+}
+
+/* 6. Below 360px (Small Mobile) */
+@media screen and (max-width: 360px) {
+    .navbarContainer {
+        padding: 0 15px;
+    }
+
+    .logoContainer {
+        width: 80px;
+    }
+
+    /* Hide non-essential links to prevent overlap on tiny screens */
+    .navItemsList li {
+        display: none;
+    }
+}
