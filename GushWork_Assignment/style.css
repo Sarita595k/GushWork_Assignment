@@ -884,6 +884,129 @@ tbody tr:nth-child(even) {
 }
 
 
+/* --- FAQ Section --- */
+/* --- FAQ Section --- */
+#faq-section {
+    width: 100%;
+    background-color: #ffffff;
+    /* Matches white sections in Figma */
+    padding: 100px 0;
+}
+
+.faq-container {
+    max-width: 1240px;
+    /* Increased to full grid width */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.faq-header {
+    text-align: left;
+    /* Changed from center to left */
+    margin-bottom: 48px;
+}
+
+.faq-header h2 {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+}
+
+.faq-header span {
+    color: var(--brand-blue);
+}
+
+.faq-header p {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 800px;
+    margin: 0;
+    /* Ensures it stays left-aligned */
+}
+
+/* --- FAQ List Styling --- */
+.faq-list {
+    width: 100%;
+}
+
+.faq-item {
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-question span {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--brand-dark);
+    text-align: left;
+}
+
+/* Arrow Icon Styling */
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: var(--brand-blue);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Answer Area */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 32px;
+    color: var(--text-gray);
+    line-height: 1.7;
+    font-size: 16px;
+    text-align: left;
+    /* Ensures answer is also left-aligned */
+}
+
+/* --- Active State Logic --- */
+.faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+    /* Flips Chevron Down to Chevron Up */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    /* Large enough to fit the text */
+}
+
+.faq-item.active .icon-circle {
+    background: var(--brand-blue);
+}
+
+.faq-item.active .toggle-icon {
+    color: #ffffff;
+}
+
 /* --- RESPONSIVE BREAKPOINTS --- */
 
 /* 1. Below 1600px (Desktop L) */

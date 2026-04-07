@@ -69,3 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
         zoomContainer.classList.remove('zoomed');
     });
 });
+
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+
+        // Close all other FAQ items (Accordion effect)
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Toggle the clicked item
+        item.classList.toggle('active');
+    });
+});
