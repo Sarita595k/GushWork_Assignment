@@ -1,0 +1,65 @@
+@media screen and (max-width: 1200px) {
+
+    /* HERO SECTION STACK */
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-gallery,
+    .heroContent {
+        width: 100%;
+    }
+
+    .product-gallery {
+        max-width: 600px;
+    }
+
+    /* IMAGE FIX */
+    .main-image-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    /* GRID FIXES */
+    .build-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* PROCESS SECTION */
+    .process-card {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .process-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* CTA SECTION */
+    .contact-cta-card {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    /* EMAIL SECTION */
+    .email-card {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    /* APPLICATION SLIDER */
+    .apps-slider {
+        grid-auto-columns: calc(50% - 20px);
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-card {
+        min-width: 300px;
+    }
+}

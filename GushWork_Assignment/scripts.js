@@ -85,3 +85,34 @@ document.querySelectorAll('.faq-question').forEach(question => {
         item.classList.toggle('active');
     });
 });
+
+const slider = document.getElementById('apps-slider');
+const nextBtn = document.getElementById('app-next');
+const prevBtn = document.getElementById('app-prev');
+
+// Scroll amount: Width of one card + gap
+const scrollAmount = 320;
+
+nextBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+
+
+const tabs = document.querySelectorAll('.tab-btn');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // In a real project, you would update the h3, p, and img 
+        // based on the data-target value here.
+    });
+});

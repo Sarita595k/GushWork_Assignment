@@ -1,0 +1,91 @@
+
+/* --- Responsive for 1600px screens --- */
+@media screen and (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* 1. Below 1600px (Desktop L) */
+@media screen and (max-width: 1600px) {
+    .navbarContainer {
+        max-width: 1400px;
+        /* Slightly wider container for large screens */
+        padding: 0 40px;
+    }
+}
+
+/* 2. Below 1440px (Standard Desktop - Figma Size) */
+@media screen and (max-width: 1440px) {
+    .navbarContainer {
+        max-width: 1240px;
+        /* Matches your original design spec */
+    }
+
+    .navItemsList {
+        gap: 2.5rem;
+        /* Shrinking the space between links */
+    }
+}
+
+/* 3. Below 1200px (Laptop/Tablet Landscape) */
+@media screen and (max-width: 1200px) {
+    .navbarContainer {
+        max-width: 1000px;
+    }
+
+    .navItemsList {
+        gap: 1.5rem;
+    }
+
+    .navItemsList li a {
+        font-size: 0.9rem;
+        /* Slightly smaller text */
+    }
+}
+
+/* 4. Below 1080px (Small Laptop) */
+@media screen and (max-width: 1080px) {
+    .navbarContainer {
+        max-width: 900px;
+    }
+
+    .logoContainer {
+        width: 100px;
+        /* Shrink logo slightly to save space */
+    }
+}
+
+/* 5. Below 800px (Tablet Portrait - Switch to Mobile Menu) */
+@media screen and (max-width: 800px) {
+
+    /* At this point, horizontal links usually break. 
+       You would typically hide the links and show a Hamburger icon here. */
+    .navItemsList {
+        gap: 1rem;
+    }
+
+    .contactBtn {
+        padding: 10px 18px;
+        /* Smaller button */
+        font-size: 0.8rem;
+    }
+}
+
+/* 6. Below 360px (Small Mobile) */
+@media screen and (max-width: 360px) {
+    .navbarContainer {
+        padding: 0 15px;
+    }
+
+    .logoContainer {
+        width: 80px;
+    }
+
+    /* Hide non-essential links to prevent overlap on tiny screens */
+    .navItemsList li {
+        display: none;
+    }
+}
