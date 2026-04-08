@@ -2413,6 +2413,10 @@ body::before {
         flex-direction: column;
         gap: 12px;
     }
+
+    .breadcrumb {
+        display: none;
+    }
 }
 
 /* --- Media Query for 800px and below --- */
