@@ -1,0 +1,168 @@
+/* =========================================
+   ✅ 1080px SCREEN (LAPTOP)
+========================================= */
+@media (max-width:1080px) {
+    html {
+        font-size: 59.5%
+    }
+
+    /* --- GLOBAL CONTAINER --- */
+    .container,
+    .navbarContainer,
+    .hero-container,
+    .specs-container,
+    .build-container,
+    .faq-container,
+    .resources-container,
+    .footer-container {
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    /* --- NAVBAR --- */
+    .navItemsList {
+        gap: 20px;
+    }
+
+    .contactBtn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-container {
+        gap: 40px;
+    }
+
+    .product-gallery {
+        width: 480px;
+    }
+
+    .main-image-wrapper {
+        width: 480px;
+        height: 480px;
+    }
+
+    .heroContent {
+        width: 480px;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    /* --- THUMBNAILS --- */
+    .thumbnail-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    /* --- PRICE CARD --- */
+    .price-card {
+        padding: 24px;
+    }
+
+    .price-value {
+        font-size: 30px;
+    }
+
+    /* --- BUTTONS --- */
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    /* --- EURO IMAGE --- */
+    .euro-image {
+        gap: 40px;
+    }
+
+    .euro-image img {
+        height: 100px;
+    }
+
+    /* --- TECHNICAL TABLE --- */
+    th,
+    td {
+        padding: 16px 20px;
+        font-size: 14px;
+    }
+
+    /* --- BUILD SECTION --- */
+    .build-header h2 {
+        font-size: 36px;
+    }
+
+    .build-cards-grid {
+        gap: 24px;
+    }
+
+    .build-card {
+        padding: 28px;
+    }
+
+    /* --- FAQ --- */
+    .faq-header h2 {
+        font-size: 36px;
+    }
+
+    /* --- EMAIL SECTION --- */
+    .email-card {
+        padding: 40px;
+        gap: 24px;
+    }
+
+    .email-content h2 {
+        font-size: 24px;
+    }
+
+    /* --- APPLICATION CARDS --- */
+    .apps-slider {
+        grid-auto-columns: calc(50% - 16px);
+        /* 2 cards instead of 3 */
+    }
+
+    /* --- PROCESS SECTION --- */
+    .process-card {
+        padding: 40px;
+        gap: 40px;
+    }
+
+    .process-image {
+        height: 320px;
+    }
+
+    /* --- TESTIMONIALS --- */
+    .testimonial-card {
+        min-width: 320px;
+        padding: 28px;
+    }
+
+    /* --- PORTFOLIO --- */
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- CTA CARD --- */
+    .contact-cta-card {
+        padding: 50px;
+        gap: 40px;
+    }
+
+    .cta-info h3 {
+        font-size: 32px;
+    }
+
+    /* --- FOOTER --- */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-branding-bar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
