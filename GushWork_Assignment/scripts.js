@@ -106,13 +106,9 @@ const tabs = document.querySelectorAll('.tab-btn');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        // Remove active class from all tabs
         tabs.forEach(t => t.classList.remove('active'));
 
-        // Add active class to clicked tab
         tab.classList.add('active');
 
-        // In a real project, you would update the h3, p, and img 
-        // based on the data-target value here.
     });
 });
