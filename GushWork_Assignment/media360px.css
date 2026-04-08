@@ -1,180 +1,117 @@
 /* ============================= */
-/* MOBILE FIRST (360px DESIGN) */
+/* MOBILE RESPONSIVE (360px) */
 /* ============================= */
-@media screen and (max-width: 800px) {
+
+@media (max-width: 360px) {
 
     body {
         width: 360px;
-        margin: 0 auto;
-        font-family: 'Inter', sans-serif;
-        background: #ffffff;
+        overflow-x: hidden;
     }
 
-    /* ================= NAVBAR ================= */
+    /* -------- NAVBAR -------- */
     .navbar {
-        width: 360px;
-        height: 64px;
-        padding: 0 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #ffffff;
-        border-bottom: 1px solid #E2E8F0;
+        height: 60px;
     }
 
-    .logoImage {
-        width: 90px;
+    .navbarContainer {
+        padding: 0 12px;
     }
 
-    /* Hide desktop nav */
-    .navbarItems {
+    .navItemsList {
         display: none;
+        /* hide menu */
     }
 
     .contactBtn {
-        display: none;
+        padding: 8px 14px;
+        font-size: 12px;
     }
 
-    /* ================= HERO ================= */
+    .logoContainer {
+        width: 90px;
+    }
+
+    /* -------- HERO SECTION -------- */
     #heroSection {
-        width: 360px;
-        padding: 16px;
+        padding: 20px 12px;
     }
 
     .hero-container {
-        display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    /* ================= PRODUCT IMAGE ================= */
+    /* PRODUCT IMAGE */
     .product-gallery {
-        width: 328px;
+        width: 100%;
+        padding: 0;
     }
 
     .main-image-wrapper {
-        width: 328px;
-        height: 328px;
+        width: 100%;
+        height: 280px;
         border-radius: 16px;
-        overflow: hidden;
     }
 
     .main-image {
-        width: 328px;
-        height: 328px;
-        object-fit: cover;
+        height: 100%;
     }
 
-    /* arrows */
-    .nav-arrow {
-        width: 32px;
-        height: 32px;
-    }
-
-    .prev {
-        left: 8px;
-    }
-
-    .next {
-        right: 8px;
-    }
-
-    /* thumbnails */
     .thumbnail-grid {
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
-        margin-top: 12px;
     }
 
     .thumb {
-        width: 72px;
-        height: 72px;
-        border-radius: 8px;
+        width: 100%;
+        height: 60px;
     }
 
-    /* ================= HERO CONTENT ================= */
+    /* HERO CONTENT */
     .heroContent {
-        width: 328px;
+        width: 100%;
     }
 
-    /* badges */
-    .hallmark-details {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-    }
-
-    .hallmark-group {
-        padding: 4px 10px;
-        border-radius: 6px;
-    }
-
-    .hallmark-content {
-        font-size: 10px;
-    }
-
-    /* title */
     .main-title {
         font-size: 22px;
-        line-height: 28px;
-        margin-bottom: 16px;
+        line-height: 1.3;
     }
 
-    /* features */
     .feature-list li {
         font-size: 14px;
-        margin-bottom: 8px;
+        gap: 10px;
     }
 
-    /* ================= PRICE CARD ================= */
+    /* PRICE CARD */
     .price-card {
-        width: 328px;
-        padding: 20px;
-        border-radius: 16px;
-    }
-
-    .price-label {
-        font-size: 12px;
+        padding: 16px;
+        border-radius: 14px;
     }
 
     .price-value {
         font-size: 24px;
     }
 
-    .badge {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    /* ================= BUTTONS ================= */
     .button-group {
-        display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
 
-    .btn-primary {
-        width: 100%;
-        height: 48px;
-        font-size: 14px;
-        border-radius: 10px;
-    }
-
+    .btn-primary,
     .btn-secondary {
         width: 100%;
-        height: 48px;
+        padding: 14px;
         font-size: 14px;
-        border-radius: 10px;
     }
 
-    /* ================= EURO SECTION ================= */
+    /* -------- TRUSTED SECTION -------- */
     #euroflex-section {
-        width: 360px;
-        padding: 20px 16px;
+        margin: 40px auto;
     }
 
     .euro-image {
+        flex-wrap: wrap;
         gap: 20px;
     }
 
@@ -182,10 +119,163 @@
         height: 60px;
     }
 
-    /* ================= FIX GLOBAL OVERFLOWS ================= */
-    .container,
-    .hero-container,
-    .gallery-container {
-        width: 100%;
+    /* -------- TECH SPECS -------- */
+    #technical-specification-section {
+        padding: 40px 12px;
     }
+
+    .specs-header h3 {
+        font-size: 22px;
+    }
+
+    .specs-header p {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    /* -------- BUILT TO LAST -------- */
+    .build-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .build-card {
+        padding: 20px;
+    }
+
+    .build-header h2 {
+        font-size: 24px;
+    }
+
+    .build-header p {
+        font-size: 14px;
+    }
+
+    /* -------- FAQ -------- */
+    #faq-section {
+        padding: 40px 12px;
+    }
+
+    .faq-header h2 {
+        font-size: 22px;
+    }
+
+    .faq-header p {
+        font-size: 14px;
+    }
+
+    .faq-question span {
+        font-size: 14px;
+    }
+
+    /* -------- EMAIL SECTION -------- */
+    .email-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .email-content h2 {
+        font-size: 20px;
+    }
+
+    .email-content p {
+        font-size: 14px;
+    }
+
+    .email-form input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    /* -------- APPLICATIONS -------- */
+    .apps-slider {
+        grid-auto-columns: 85%;
+    }
+
+    .app-card {
+        height: 250px;
+    }
+
+    /* -------- PROCESS -------- */
+    .process-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .process-info h3 {
+        font-size: 20px;
+    }
+
+    .process-image {
+        height: 200px;
+    }
+
+    /* -------- TESTIMONIAL -------- */
+    .testimonial-card {
+        min-width: 280px;
+        padding: 20px;
+    }
+
+    /* -------- PORTFOLIO -------- */
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .solution-card {
+        padding: 20px;
+    }
+
+    /* -------- RESOURCES -------- */
+    .download-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* -------- CONTACT CTA -------- */
+    .contact-cta-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .cta-info h3 {
+        font-size: 22px;
+    }
+
+    .cta-info p {
+        font-size: 14px;
+    }
+
+    /* -------- FOOTER -------- */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-branding-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
 }
