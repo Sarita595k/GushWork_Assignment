@@ -213,11 +213,46 @@ body::before {
 }
 
 /* --- Breadcrumbs Centering --- */
-.breadcrumbs {
+.breadcrumb {
     width: 100%;
     max-width: 1240px;
-    margin: 20px auto;
-    padding-left: 24px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin-left: 8px;
+    color: #cbd5e1;
+}
+
+.breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--brand-blue);
+}
+
+.breadcrumb li:last-child span {
+    color: var(--brand-dark);
+    font-weight: 500;
 }
 
 .hero-container {
@@ -501,7 +536,7 @@ body::before {
 }
 
 .main-title {
-    font-size: 44px;
+    font-size: clamp(32px, 4vw, 44px);
     font-weight: 800;
     line-height: 1.1;
     color: #0f172a;
@@ -800,7 +835,7 @@ tbody tr:nth-child(even) {
 }
 
 .build-header h2 {
-    font-size: 44px;
+    font-size: clamp(32px, 5vw, 44px);
     font-weight: 800;
     color: var(--brand-dark);
     text-transform: capitalize;
@@ -820,7 +855,7 @@ tbody tr:nth-child(even) {
 /* --- The 3-Column Grid --- */
 .build-cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
     width: 100%;
     margin-bottom: 60px;
@@ -2135,4 +2170,764 @@ body::before {
     text-decoration: none;
     font-size: 13px;
     color: #94A3B8;
+}
+
+/* --- Media Query for 360px and below --- */
+@media (max-width: 360px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .navbarContainer {
+        padding: 0 12px;
+    }
+
+    .navItemsList {
+        display: none;
+        /* Hide menu on mobile */
+    }
+
+    .contactBtn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .logoContainer {
+        width: 90px;
+    }
+
+    #heroSection {
+        padding: 20px 12px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .product-gallery {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        border-radius: 16px;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .thumb {
+        width: 100%;
+        aspect-ratio: 1;
+        height: auto;
+    }
+
+    .heroContent {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: clamp(18px, 6vw, 22px);
+        line-height: 1.3;
+    }
+
+    .feature-list li {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .price-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .price-value {
+        font-size: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .build-container {
+        padding: 0 12px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .build-card {
+        padding: 20px;
+    }
+
+    .build-card h4 {
+        font-size: 14px;
+    }
+
+    .build-card p {
+        font-size: 12px;
+    }
+
+    .faq-container {
+        padding: 0 12px;
+    }
+
+    .faq-item {
+        padding: 12px;
+    }
+
+    .faq-question span {
+        font-size: 14px;
+    }
+
+    .email-card {
+        padding: 16px 12px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .email-content h2 {
+        font-size: 20px;
+    }
+
+    .email-form {
+        gap: 12px;
+    }
+
+    .apps-container {
+        padding: 0 12px;
+    }
+
+    .apps-slider {
+        grid-auto-columns: 280px;
+    }
+
+    .app-card {
+        height: 320px;
+    }
+
+    .process-container {
+        padding: 0 12px;
+    }
+
+    .process-card {
+        padding: 30px 12px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .process-info h3 {
+        font-size: 20px;
+    }
+
+    .testimonials-container {
+        padding: 0 12px;
+    }
+
+    .testimonial-slider {
+        gap: 16px;
+    }
+
+    .testimonial-card {
+        min-width: 280px;
+        padding: 24px;
+    }
+
+    .portfolio-container {
+        padding: 0 12px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .resources-container {
+        padding: 0 12px;
+    }
+
+    .download-list {
+        margin-bottom: 60px;
+    }
+
+    .download-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px 12px;
+    }
+
+    .contact-cta-card {
+        padding: 30px 12px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .cta-info h3 {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        padding: 0 12px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-branding-bar {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 12px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* --- Media Query for 800px and below --- */
+@media (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbarContainer {
+        width: 100%;
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .logoContainer {
+        width: 90px;
+    }
+
+    .navItemsList {
+        gap: 20px;
+    }
+
+    .navItemsList li a {
+        font-size: 14px;
+    }
+
+    .contactBtn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    #heroSection {
+        width: 100%;
+        max-width: 760px;
+        padding: 40px 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .product-gallery {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    .main-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+    }
+
+    .thumb {
+        width: 100%;
+        aspect-ratio: 1;
+        height: auto;
+    }
+
+    .heroContent {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    .main-title {
+        font-size: clamp(24px, 5vw, 32px);
+    }
+
+    .feature-list li {
+        font-size: 14px;
+    }
+
+    .price-card {
+        padding: 24px;
+    }
+
+    .price-value {
+        font-size: 28px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .build-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .build-card {
+        padding: 24px;
+    }
+
+    .build-card h4 {
+        font-size: 14px;
+    }
+
+    .build-card p {
+        font-size: 12px;
+    }
+
+    .faq-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .email-card {
+        max-width: 760px;
+        padding: 20px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .apps-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .process-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .process-card {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .testimonials-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .testimonial-slider {
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        min-width: 300px;
+        padding: 30px;
+    }
+
+    .portfolio-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .resources-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .contact-cta-card {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        max-width: 760px;
+        padding: 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .footer-branding-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* --- Media Query for 1080px and below --- */
+@media (max-width: 1080px) {
+    .navbar {
+        width: 100%;
+        max-width: 1080px;
+    }
+
+    .navbarContainer {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    #heroSection {
+        width: 100%;
+        max-width: 1080px;
+        padding: 40px 0;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 1080px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .product-gallery {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .heroContent {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .main-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .thumb {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+    .main-title {
+        font-size: clamp(28px, 4vw, 32px);
+    }
+
+    .price-value {
+        font-size: 28px;
+    }
+
+    .build-container {
+        max-width: 1080px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .build-card {
+        padding: 28px;
+    }
+
+    .build-card h4 {
+        font-size: 16px;
+    }
+
+    .build-card p {
+        font-size: 13px;
+    }
+
+    .faq-container {
+        max-width: 1080px;
+    }
+
+    .email-card {
+        max-width: 1080px;
+        padding: 20px 40px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .apps-container {
+        max-width: 1080px;
+    }
+
+    .process-container {
+        max-width: 1080px;
+    }
+
+    .testimonials-container {
+        max-width: 1080px;
+    }
+
+    .portfolio-container {
+        max-width: 1080px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .resources-container {
+        max-width: 1080px;
+    }
+
+    .footer-container {
+        max-width: 1080px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+    }
+}
+
+/* --- Media Query for 1200px and below --- */
+@media (max-width: 1200px) {
+    .navbar {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .navbarContainer {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+
+    #heroSection {
+        width: 100%;
+        max-width: 1200px;
+        padding: 40px 0;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .product-gallery {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .heroContent {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .main-image-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    .thumb {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+    .main-title {
+        font-size: clamp(32px, 4vw, 36px);
+    }
+
+    .price-value {
+        font-size: 32px;
+    }
+
+    .build-container {
+        max-width: 1200px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+
+    .build-card {
+        padding: 32px;
+    }
+
+    .build-card h4 {
+        font-size: 18px;
+    }
+
+    .build-card p {
+        font-size: 14px;
+    }
+
+    .faq-container {
+        max-width: 1200px;
+    }
+
+    .email-card {
+        max-width: 1200px;
+        padding: 20px 60px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .apps-container {
+        max-width: 1200px;
+    }
+
+    .process-container {
+        max-width: 1200px;
+    }
+
+    .testimonials-container {
+        max-width: 1200px;
+    }
+
+    .portfolio-container {
+        max-width: 1200px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .resources-container {
+        max-width: 1200px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+    }
+}
+
+/* --- Media Query for screens larger than 1440px --- */
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .navbarContainer {
+        max-width: 1600px;
+    }
+
+    #heroSection {
+        max-width: 1600px;
+    }
+
+    .hero-container {
+        max-width: 1400px;
+    }
+
+    .build-container {
+        max-width: 1600px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .faq-container {
+        max-width: 1600px;
+    }
+
+    .portfolio-container {
+        max-width: 1600px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .resources-container {
+        max-width: 1600px;
+    }
+
+    .footer-container {
+        max-width: 1600px;
+    }
+
+    .main-title {
+        font-size: clamp(44px, 5vw, 48px);
+    }
+
+    .build-header h2 {
+        font-size: clamp(44px, 5vw, 48px);
+    }
 }

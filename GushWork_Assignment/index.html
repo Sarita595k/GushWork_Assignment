@@ -41,9 +41,12 @@
                 </div>
             </div>
         </nav>
-        <div class="breadcrumbs">
-            <p>Products</p>
-        </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="#">Home</a></li>
+                <li><span id="current-section">Products</span></li>
+            </ol>
+        </nav>
 
         <!-- main hero section starts here  -->
         <section id="heroSection">
@@ -731,6 +734,47 @@
             </div>
         </footer>
     </div>
+    <script>
+        // Dynamic Breadcrumbs
+        const breadcrumbSpan = document.getElementById('current-section');
+        const sections = [
+            { id: 'heroSection', name: 'Products' },
+            { id: 'euroflex-section', name: 'Trusted Partners' },
+            { id: 'technical-specification-section', name: 'Technical Specifications' },
+            { id: 'built-to-last-section', name: 'Features' },
+            { id: 'faq-section', name: 'FAQ' },
+            { id: 'get-email', name: 'Contact' },
+            { id: 'applications-section', name: 'Applications' },
+            { id: 'process-section', name: 'Manufacturing Process' },
+            { id: 'testimonials-section', name: 'Testimonials' },
+            { id: 'portfolio-section', name: 'Portfolio' },
+            { id: 'resources-section', name: 'Resources' }
+        ];
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = sections.find(sec => sec.id === entry.target.id);
+                    if (section) {
+                        breadcrumbSpan.textContent = section.name;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            const element = document.getElementById(section.id);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+    </script>
     <script src="./scripts.js"></script>
 </body>
 
