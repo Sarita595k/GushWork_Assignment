@@ -1,0 +1,191 @@
+/* ============================= */
+/* MOBILE FIRST (360px DESIGN) */
+/* ============================= */
+@media screen and (max-width: 800px) {
+
+    body {
+        width: 360px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+        background: #ffffff;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+        width: 360px;
+        height: 64px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        border-bottom: 1px solid #E2E8F0;
+    }
+
+    .logoImage {
+        width: 90px;
+    }
+
+    /* Hide desktop nav */
+    .navbarItems {
+        display: none;
+    }
+
+    .contactBtn {
+        display: none;
+    }
+
+    /* ================= HERO ================= */
+    #heroSection {
+        width: 360px;
+        padding: 16px;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* ================= PRODUCT IMAGE ================= */
+    .product-gallery {
+        width: 328px;
+    }
+
+    .main-image-wrapper {
+        width: 328px;
+        height: 328px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .main-image {
+        width: 328px;
+        height: 328px;
+        object-fit: cover;
+    }
+
+    /* arrows */
+    .nav-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    /* thumbnails */
+    .thumbnail-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .thumb {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+    }
+
+    /* ================= HERO CONTENT ================= */
+    .heroContent {
+        width: 328px;
+    }
+
+    /* badges */
+    .hallmark-details {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .hallmark-group {
+        padding: 4px 10px;
+        border-radius: 6px;
+    }
+
+    .hallmark-content {
+        font-size: 10px;
+    }
+
+    /* title */
+    .main-title {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    /* features */
+    .feature-list li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    /* ================= PRICE CARD ================= */
+    .price-card {
+        width: 328px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .price-label {
+        font-size: 12px;
+    }
+
+    .price-value {
+        font-size: 24px;
+    }
+
+    .badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    /* ================= BUTTONS ================= */
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .btn-secondary {
+        width: 100%;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    /* ================= EURO SECTION ================= */
+    #euroflex-section {
+        width: 360px;
+        padding: 20px 16px;
+    }
+
+    .euro-image {
+        gap: 20px;
+    }
+
+    .euro-image img {
+        height: 60px;
+    }
+
+    /* ================= FIX GLOBAL OVERFLOWS ================= */
+    .container,
+    .hero-container,
+    .gallery-container {
+        width: 100%;
+    }
+}

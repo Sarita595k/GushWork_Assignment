@@ -1,0 +1,261 @@
+/* ============================= */
+/* 📱 800px SCREEN OPTIMIZATION */
+/* ============================= */
+
+@media screen and (max-width: 800px) {
+
+    body {
+        width: 800px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+        height: 70px;
+    }
+
+    .navbarContainer {
+        width: 760px;
+        padding: 0 20px;
+    }
+
+    .logoContainer {
+        width: 90px;
+    }
+
+    .navItemsList {
+        gap: 20px;
+    }
+
+    .navItemsList li a {
+        font-size: 14px;
+    }
+
+    .contactBtn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    /* ================= HERO ================= */
+    #heroSection {
+        width: 760px;
+        padding: 40px 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* PRODUCT IMAGE */
+    .product-gallery {
+        width: 760px;
+    }
+
+    .main-image-wrapper {
+        width: 760px;
+        height: 420px;
+    }
+
+    .main-image {
+        height: 420px;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+    }
+
+    .thumb {
+        height: 60px;
+    }
+
+    /* HERO CONTENT */
+    .heroContent {
+        width: 760px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .feature-list li {
+        font-size: 14px;
+    }
+
+    /* PRICE CARD */
+    .price-card {
+        padding: 24px;
+    }
+
+    .price-value {
+        font-size: 28px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 14px;
+    }
+
+    /* ================= EURO SECTION ================= */
+    #euroflex-section {
+        width: 760px;
+    }
+
+    .euro-image {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .euro-image img {
+        height: 80px;
+    }
+
+    /* ================= TECH SPEC ================= */
+    #technical-specification-section {
+        padding: 60px 20px;
+    }
+
+    .specs-container {
+        width: 760px;
+    }
+
+    th,
+    td {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    /* ================= BUILT TO LAST ================= */
+    .build-container {
+        width: 760px;
+    }
+
+    .build-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .build-card {
+        padding: 24px;
+    }
+
+    /* ================= FAQ ================= */
+    .faq-container {
+        width: 760px;
+    }
+
+    .faq-header h2 {
+        font-size: 32px;
+    }
+
+    /* ================= EMAIL ================= */
+    .email-card {
+        width: 760px;
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .email-content h2 {
+        font-size: 22px;
+    }
+
+    /* ================= APPLICATIONS ================= */
+    .apps-container {
+        width: 760px;
+    }
+
+    .apps-slider {
+        grid-auto-columns: 100%;
+    }
+
+    .app-card {
+        height: 300px;
+    }
+
+    /* ================= PROCESS ================= */
+    .process-container {
+        width: 760px;
+    }
+
+    .process-card {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .process-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+    .testimonial-card {
+        min-width: 300px;
+        padding: 24px;
+    }
+
+    /* ================= PORTFOLIO ================= */
+    .portfolio-container {
+        width: 760px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ================= RESOURCES ================= */
+    .resources-container {
+        width: 760px;
+    }
+
+    .download-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* ================= CTA ================= */
+    .contact-cta-card {
+        flex-direction: column;
+        padding: 40px;
+        gap: 30px;
+    }
+
+    .cta-info h3 {
+        font-size: 28px;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer-container {
+        width: 760px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-branding-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
